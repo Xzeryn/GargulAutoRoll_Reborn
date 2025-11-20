@@ -11,7 +11,10 @@ v4.0
   - Shows total items imported per raid
   - Displays count of new items added vs existing items
   - Provides summary of total raids and items processed
-- Improved import logic to properly merge AtlasLoot data with manual item lists without duplicates
+  - Improved import logic to properly merge AtlasLoot data with manual item lists without duplicates
+  - **NEW:** Added 1-second delay to automatic rolls for a more natural appearance
+  - Fixed raid sorting to include Naxxramas in the priority order
+  - Added `/gar testraid` command to simulate being in specific raids for testing sorting
 
 v3.8
 - Added more AQ Items to the local database

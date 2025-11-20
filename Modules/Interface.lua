@@ -357,6 +357,7 @@ end
 --- SHOW RESULTS
 --------------------------------------------------
 local raidPriorityOrder = {
+    "Naxxramas",
     "Temple of Ahn'Qiraj",
     "Ruins of Ahn'Qiraj",
     "Ahn'Qiraj Formulas",
@@ -370,23 +371,35 @@ local raidPriorityOrder = {
 }
 
 local function GenerateRaidPriorityOrder()
-    for i = #raidPriorityOrder, 1, -1 do
-        if raidPriorityOrder[i] == GargulAutoRoll.playerInstance then
-            table.remove(raidPriorityOrder, i)
-            table.insert(raidPriorityOrder, 1, GargulAutoRoll.playerInstance)
-            break
+    -- Create a fresh copy of the priority order to avoid modifying the original
+    local priorityOrder = {}
+    for i, raidName in ipairs(raidPriorityOrder) do
+        priorityOrder[i] = raidName
+    end
+    
+    -- Map instance names (from GetInstanceInfo) to raid names (in items database)
+    local instanceToRaidMap = {
+        ["Onyxia's Lair"] = "Onyxia",
+        ["Ahn'Qiraj"] = "Temple of Ahn'Qiraj",
+        -- Add other mappings if needed (most raids have matching names)
+    }
+    
+    -- Get the actual raid name to prioritize
+    local raidToMove = instanceToRaidMap[GargulAutoRoll.playerInstance] or GargulAutoRoll.playerInstance
+    
+    -- Find and move the matching raid to the top
+    if raidToMove then
+        for i = #priorityOrder, 1, -1 do
+            if priorityOrder[i] == raidToMove then
+                table.remove(priorityOrder, i)
+                table.insert(priorityOrder, 1, raidToMove)
+                break
+            end
         end
     end
-    if GargulAutoRoll.playerInstance == "Onyxia's Lair" then
-        table.remove(raidPriorityOrder["Onyxia"])
-        table.insert(raidPriorityOrder, 1, "Onyxia")
-    end
-    if GargulAutoRoll.playerInstance == "Ahn'Qiraj" then
-        table.remove(raidPriorityOrder["Temple of Ahn'Qiraj"])
-        table.insert(raidPriorityOrder, 1, "Temple of Ahn'Qiraj")
-    end
-    GargulAutoRoll.raidPriorityOrder = raidPriorityOrder
-    return raidPriorityOrder
+    
+    GargulAutoRoll.raidPriorityOrder = priorityOrder
+    return priorityOrder
 end
 
 local function SortRaidsByPriority(entry)

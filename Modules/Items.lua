@@ -922,7 +922,6 @@ GargulAutoRoll.Items.Classic = {
     ["Onyxia"] = {
         ["Onyxia"] = {
             17064, -- Shard of the Scale
-            17065, -- Medallion of Steadfast Might
             17067, -- Ancient Cornerstone Grimoire
             17068, -- Deathbringer
             17075, -- Vis'kag the Bloodletter

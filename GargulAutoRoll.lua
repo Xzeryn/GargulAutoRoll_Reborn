@@ -99,10 +99,16 @@ do
                 itemId = tonumber(itemId)
                 if GargulAutoRollDB.rules and GargulAutoRollDB.rules[itemId] == Utils.ROLL.MS then
                     print(MSG, "Rolling MS for " .. itemLink)
-                    RandomRoll(1, 100)
+                    -- Delay the roll by 1 second to appear more natural
+                    C_Timer.After(1, function()
+                        RandomRoll(1, 100)
+                    end)
                 elseif GargulAutoRollDB.rules and GargulAutoRollDB.rules[itemId] == Utils.ROLL.OS then
                     print(MSG, "Rolling OS for " .. itemLink)
-                    RandomRoll(1, 99)
+                    -- Delay the roll by 1 second to appear more natural
+                    C_Timer.After(1, function()
+                        RandomRoll(1, 99)
+                    end)
                 end
             end
         end
@@ -279,6 +285,9 @@ do
         print("       /gar minimap")
         print("  Test AtlasLoot integration:")
         print("       /gar test")
+        print("  Test raid sorting (simulate being in a raid):")
+        print("       /gar testraid [raid name]")
+        print("       /gar testraid reset")
     end
 end
 

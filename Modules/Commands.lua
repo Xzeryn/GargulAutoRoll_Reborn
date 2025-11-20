@@ -145,6 +145,44 @@ SlashCmdList["AR"] = function(msg)
         return
     end
 
+    -- Test raid sorting by simulating being in a specific raid
+    if string.match(cmd, "^testraid") then
+        local raidName = string.match(msg, "^testraid%s+(.+)")
+        
+        if not raidName then
+            print(MSG, "Usage: /gar testraid <raid name>")
+            print(MSG, "Available raids:")
+            print(MSG, "  - Naxxramas")
+            print(MSG, "  - Temple of Ahn'Qiraj")
+            print(MSG, "  - Ruins of Ahn'Qiraj")
+            print(MSG, "  - Blackwing Lair")
+            print(MSG, "  - Zul'Gurub")
+            print(MSG, "  - Molten Core")
+            print(MSG, "  - Onyxia's Lair")
+            print(MSG, "")
+            print(MSG, "To reset: /gar testraid reset")
+            return
+        end
+        
+        if raidName:lower() == "reset" then
+            GargulAutoRoll.playerInstance = nil
+            print(MSG, "Raid instance reset to normal (not in any raid)")
+        else
+            GargulAutoRoll.playerInstance = raidName
+            print(MSG, "Simulating being in: " .. raidName)
+        end
+        
+        -- Refresh the UI if it's open
+        if GargulAutoRoll:IsShown() then
+            GargulAutoRoll.Interface:RefreshEntries()
+            print(MSG, "Interface refreshed - items should now be sorted with " .. (raidName:lower() == "reset" and "normal priority" or raidName .. " at the top"))
+        else
+            print(MSG, "Open the addon window (/gar) to see the sorting effect")
+        end
+        
+        return
+    end
+
     if cmd == "help" then
         GargulAutoRoll:PrintHelp()
         return
