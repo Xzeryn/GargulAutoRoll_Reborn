@@ -1,4 +1,4 @@
-ADDON_VERSION = "v3.8"
+ADDON_VERSION = "v4.0"
 DEBUG = false
 DEBUG_MSG = "|c00967FD2[DEBUG]|r"
 MSG = "|c00967FD2[GargulAutoRoll]|r"
