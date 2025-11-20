@@ -1,4 +1,5 @@
-Utils = {
+-- Use a unique name to avoid conflicts with other addons
+GargulAutoRoll_Utils = {
     ROLL = {
         MS = 0,
         OS = 1,
@@ -6,6 +7,9 @@ Utils = {
         SEARCH = 3
     }
 }
+
+-- Keep backward compatibility reference
+local Utils = GargulAutoRoll_Utils
 
 function Utils:IsItemLink(string)
     return string:find("|Hitem:%d+:")
@@ -82,7 +86,7 @@ function Utils:GetItemInfoAsync(itemId, callback)
     -- Timeout handler
     frame:SetScript("OnUpdate", function()
         if (GetTime() - startTime) > timeout then
-            print(MSG, "The item with ID " .. itemId .. " could not be found.")
+            --print(MSG, "The item with ID " .. itemId .. " could not be found.")
             callback(nil, nil, nil, nil)
             cleanup()
         end
@@ -223,3 +227,6 @@ function Utils:CountRules(rules)
     end
     return count
 end
+
+-- Confirmation that GargulAutoRoll_Utils loaded completely
+print("|c00967FD2[GargulAutoRoll]|r Utils module loaded successfully (as GargulAutoRoll_Utils)")

@@ -1,5 +1,8 @@
 GargulAutoRoll.Interface = {}
 
+-- Reference to our Utils (avoid conflicts with other addons)
+local Utils = GargulAutoRoll_Utils
+
 local function CleanupFrame(frame)
     if frame then
         frame:Hide() -- Hide the frame
@@ -357,6 +360,7 @@ end
 --- SHOW RESULTS
 --------------------------------------------------
 local raidPriorityOrder = {
+    "Naxxramas",
     "Temple of Ahn'Qiraj",
     "Ruins of Ahn'Qiraj",
     "Ahn'Qiraj Formulas",
@@ -370,23 +374,35 @@ local raidPriorityOrder = {
 }
 
 local function GenerateRaidPriorityOrder()
-    for i = #raidPriorityOrder, 1, -1 do
-        if raidPriorityOrder[i] == GargulAutoRoll.playerInstance then
-            table.remove(raidPriorityOrder, i)
-            table.insert(raidPriorityOrder, 1, GargulAutoRoll.playerInstance)
-            break
+    -- Create a fresh copy of the priority order to avoid modifying the original
+    local priorityOrder = {}
+    for i, raidName in ipairs(raidPriorityOrder) do
+        priorityOrder[i] = raidName
+    end
+    
+    -- Map instance names (from GetInstanceInfo) to raid names (in items database)
+    local instanceToRaidMap = {
+        ["Onyxia's Lair"] = "Onyxia",
+        ["Ahn'Qiraj"] = "Temple of Ahn'Qiraj",
+        -- Add other mappings if needed (most raids have matching names)
+    }
+    
+    -- Get the actual raid name to prioritize
+    local raidToMove = instanceToRaidMap[GargulAutoRoll.playerInstance] or GargulAutoRoll.playerInstance
+    
+    -- Find and move the matching raid to the top
+    if raidToMove then
+        for i = #priorityOrder, 1, -1 do
+            if priorityOrder[i] == raidToMove then
+                table.remove(priorityOrder, i)
+                table.insert(priorityOrder, 1, raidToMove)
+                break
+            end
         end
     end
-    if GargulAutoRoll.playerInstance == "Onyxia's Lair" then
-        table.remove(raidPriorityOrder["Onyxia"])
-        table.insert(raidPriorityOrder, 1, "Onyxia")
-    end
-    if GargulAutoRoll.playerInstance == "Ahn'Qiraj" then
-        table.remove(raidPriorityOrder["Temple of Ahn'Qiraj"])
-        table.insert(raidPriorityOrder, 1, "Temple of Ahn'Qiraj")
-    end
-    GargulAutoRoll.raidPriorityOrder = raidPriorityOrder
-    return raidPriorityOrder
+    
+    GargulAutoRoll.raidPriorityOrder = priorityOrder
+    return priorityOrder
 end
 
 local function SortRaidsByPriority(entry)
@@ -916,10 +932,36 @@ function GargulAutoRoll.Interface:RefreshWithItems(searchResults)
 
         searchResults = {}
 
+        -- Defensive check for Utils and CountRules with diagnostics
+        if not Utils then
+            print(MSG, "Error: Utils table is nil. Please reload the UI (/reload)")
+            return
+        end
+        
+        -- Fallback implementation if CountRules is missing
+        local function CountRules(rules)
+            if not rules then return 0 end
+            local count = 0
+            for _ in pairs(rules) do
+                count = count + 1
+            end
+            return count
+        end
+        
+        if not Utils.CountRules then
+            print(MSG, "Warning: Utils.CountRules is missing, using fallback implementation")
+            print(MSG, "Utils table contents:")
+            for k, v in pairs(Utils) do
+                print("  ", k, type(v))
+            end
+            -- Use fallback
+            Utils.CountRules = CountRules
+        end
+
         local pendingAsync = Utils:CountRules(GargulAutoRollDB.rules)
 
         if pendingAsync > 0 then
-            if DEBUG then print(DEBUG_MSG, "[RefreshWithItems] Processing", Utils:CountRules(GargulAutoRollDB.rules), "rules") end
+            if DEBUG then print(DEBUG_MSG, "[RefreshWithItems] Processing", pendingAsync, "rules") end
             for itemId, _ in pairs(GargulAutoRollDB.rules) do
                 Utils:GetItemInfoAsync(itemId, function(itemName, itemLink, itemRarity, itemIcon)
                     requests = requests + 1

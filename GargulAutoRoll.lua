@@ -1,7 +1,10 @@
-ADDON_VERSION = "v3.8"
-DEBUG = false
+ADDON_VERSION = "v4.0"
+DEBUG = false  -- Debug mode disabled
 DEBUG_MSG = "|c00967FD2[DEBUG]|r"
 MSG = "|c00967FD2[GargulAutoRoll]|r"
+
+-- Reference to our Utils (avoid conflicts with other addons)
+local Utils = GargulAutoRoll_Utils
 
 if DEBUG then
     REQUESTED = 0
@@ -93,16 +96,28 @@ do
 
     local function HandleAutoroll(message, sender)
         if GargulAutoRollDB.enabled == true then
+            -- Verify Utils is available
+            if not Utils or not Utils.ROLL then
+                print(MSG, "Error: Utils not properly loaded. Cannot auto-roll.")
+                return
+            end
+            
             local itemLink, itemId = message:match("roll on (|c.-|Hitem:(%d+).-|h|r)")
 
             if itemId then
                 itemId = tonumber(itemId)
                 if GargulAutoRollDB.rules and GargulAutoRollDB.rules[itemId] == Utils.ROLL.MS then
                     print(MSG, "Rolling MS for " .. itemLink)
-                    RandomRoll(1, 100)
+                    -- Delay the roll by 1 second to appear more natural
+                    C_Timer.After(1, function()
+                        RandomRoll(1, 100)
+                    end)
                 elseif GargulAutoRollDB.rules and GargulAutoRollDB.rules[itemId] == Utils.ROLL.OS then
                     print(MSG, "Rolling OS for " .. itemLink)
-                    RandomRoll(1, 99)
+                    -- Delay the roll by 1 second to appear more natural
+                    C_Timer.After(1, function()
+                        RandomRoll(1, 99)
+                    end)
                 end
             end
         end
@@ -172,8 +187,13 @@ do
                 if not GargulAutoRoll.IsSoD then GargulAutoRoll.AtlasLoot.Import() end
                 GargulAutoRoll.IsInitialized = true
             end
-            GargulAutoRoll.playerInstance = GetInstanceInfo()
+            local instanceName = GetInstanceInfo()
+            GargulAutoRoll.playerInstance = instanceName
             if DEBUG then print(DEBUG_MSG, "[GetPlayerInstance]", GargulAutoRoll.playerInstance) end
+            -- Refresh the UI to reorder items if the addon window is open
+            if GargulAutoRoll:IsShown() then
+                GargulAutoRoll.Interface:RefreshEntries()
+            end
             return
         elseif event == "CHAT_MSG_RAID" or event == "CHAT_MSG_RAID_LEADER" or event == "CHAT_MSG_RAID_WARNING" or (DEBUG and event == "CHAT_MSG_SAY") then
             OnRaidMessage(self, event, addon, ...)
@@ -198,6 +218,12 @@ do
     end)
 
     function GargulAutoRoll:SaveRule(itemLink, rule)
+        -- Verify Utils is available
+        if not Utils then
+            print(MSG, "Error: Utils not properly loaded. Cannot save rule.")
+            return
+        end
+        
         local itemId = Utils:GetItemIdFromLink(itemLink)
 
         if itemId then
@@ -226,6 +252,12 @@ do
     end
 
     function GargulAutoRoll:SaveRuleAsync(itemLink, rule)
+        -- Verify Utils is available
+        if not Utils then
+            print(MSG, "Error: Utils not properly loaded. Cannot save rule.")
+            return
+        end
+        
         local itemId = Utils:GetItemIdFromLink(itemLink)
 
         Utils:GetItemInfoAsync(itemId, function(itemName, itemLink, itemRarity, itemIcon)
@@ -272,6 +304,11 @@ do
         print("       /gar rules")
         print("  Show/Hide minimap button:")
         print("       /gar minimap")
+        print("  Test AtlasLoot integration:")
+        print("       /gar test")
+        print("  Test raid sorting (simulate being in a raid):")
+        print("       /gar testraid [raid name]")
+        print("       /gar testraid reset")
     end
 end
 

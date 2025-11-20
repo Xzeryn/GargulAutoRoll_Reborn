@@ -1,3 +1,6 @@
+-- Reference to our Utils (avoid conflicts with other addons)
+local Utils = GargulAutoRoll_Utils
+
 SLASH_AR1 = '/gar';
 SLASH_AR2 = '/gargulautoroll';
 
@@ -68,7 +71,7 @@ SlashCmdList["AR"] = function(msg)
                         rule = ruleData
                     })
                 else
-                    print(MSG, "Item info not available for ID:", itemId)
+                    --print(MSG, "Item info not available for ID:", itemId)
                 end
 
                 remainingItems = remainingItems - 1
@@ -83,6 +86,103 @@ SlashCmdList["AR"] = function(msg)
 
     if cmd == "minimap" then
         GargulAutoRoll.Minimap:Toggle()
+        return
+    end
+
+    if cmd == "test" then
+        -- Test AtlasLoot integration
+        print(MSG, "=== AtlasLoot Integration Test ===")
+        
+        -- Check if AtlasLoot is loaded
+        if AtlasLoot then
+            print(MSG, "✓ AtlasLoot addon is loaded")
+        else
+            print(MSG, "✗ AtlasLoot addon NOT found")
+            return
+        end
+        
+        -- Check if data storage exists
+        if AtlasLoot.ItemDB and AtlasLoot.ItemDB.Storage and AtlasLoot.ItemDB.Storage.AtlasLootClassic_DungeonsAndRaids then
+            print(MSG, "✓ AtlasLoot data storage is ready")
+        else
+            print(MSG, "✗ AtlasLoot data storage NOT ready")
+            return
+        end
+        
+        -- Check if GargulAutoRoll has imported items
+        local hasItems = false
+        local raidCount = 0
+        local bossCount = 0
+        local itemCount = 0
+        
+        for raidName, raidData in pairs(GargulAutoRoll.Items.Classic) do
+            raidCount = raidCount + 1
+            for bossName, items in pairs(raidData) do
+                bossCount = bossCount + 1
+                for _, itemId in pairs(items) do
+                    itemCount = itemCount + 1
+                    hasItems = true
+                end
+            end
+        end
+        
+        if hasItems then
+            print(MSG, "✓ Items imported successfully")
+            print(MSG, "  Raids: " .. raidCount)
+            print(MSG, "  Bosses: " .. bossCount)
+            print(MSG, "  Items: " .. itemCount)
+        else
+            print(MSG, "✗ No items found in GargulAutoRoll.Items.Classic")
+        end
+        
+        -- Sample a specific raid
+        if GargulAutoRoll.Items.Classic["Blackwing Lair"] then
+            local bwlBosses = 0
+            for _ in pairs(GargulAutoRoll.Items.Classic["Blackwing Lair"]) do
+                bwlBosses = bwlBosses + 1
+            end
+            print(MSG, "  Example: Blackwing Lair has " .. bwlBosses .. " bosses")
+        end
+        
+        print(MSG, "=== Test Complete ===")
+        return
+    end
+
+    -- Test raid sorting by simulating being in a specific raid
+    if string.match(cmd, "^testraid") then
+        local raidName = string.match(msg, "^testraid%s+(.+)")
+        
+        if not raidName then
+            print(MSG, "Usage: /gar testraid <raid name>")
+            print(MSG, "Available raids:")
+            print(MSG, "  - Naxxramas")
+            print(MSG, "  - Temple of Ahn'Qiraj")
+            print(MSG, "  - Ruins of Ahn'Qiraj")
+            print(MSG, "  - Blackwing Lair")
+            print(MSG, "  - Zul'Gurub")
+            print(MSG, "  - Molten Core")
+            print(MSG, "  - Onyxia's Lair")
+            print(MSG, "")
+            print(MSG, "To reset: /gar testraid reset")
+            return
+        end
+        
+        if raidName:lower() == "reset" then
+            GargulAutoRoll.playerInstance = nil
+            print(MSG, "Raid instance reset to normal (not in any raid)")
+        else
+            GargulAutoRoll.playerInstance = raidName
+            print(MSG, "Simulating being in: " .. raidName)
+        end
+        
+        -- Refresh the UI if it's open
+        if GargulAutoRoll:IsShown() then
+            GargulAutoRoll.Interface:RefreshEntries()
+            print(MSG, "Interface refreshed - items should now be sorted with " .. (raidName:lower() == "reset" and "normal priority" or raidName .. " at the top"))
+        else
+            print(MSG, "Open the addon window (/gar) to see the sorting effect")
+        end
+        
         return
     end
 
