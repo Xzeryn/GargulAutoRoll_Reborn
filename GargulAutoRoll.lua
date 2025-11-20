@@ -175,10 +175,6 @@ do
             local instanceName = GetInstanceInfo()
             GargulAutoRoll.playerInstance = instanceName
             if DEBUG then print(DEBUG_MSG, "[GetPlayerInstance]", GargulAutoRoll.playerInstance) end
-            -- Temporary debug to help troubleshoot
-            if instanceName and instanceName ~= "" then
-                print(MSG, "Detected instance:", instanceName)
-            end
             -- Refresh the UI to reorder items if the addon window is open
             if GargulAutoRoll:IsShown() then
                 GargulAutoRoll.Interface:RefreshEntries()
@@ -281,6 +277,8 @@ do
         print("       /gar rules")
         print("  Show/Hide minimap button:")
         print("       /gar minimap")
+        print("  Test AtlasLoot integration:")
+        print("       /gar test")
     end
 end
 

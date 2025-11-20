@@ -5,15 +5,15 @@ local function IsAtlasLootDataReady()
 end
 
 local raidNameMappings = {
-    --Naxxramas = "Naxxramas"
+    Naxxramas = "Naxxramas",              -- Now enabled for consistency
     TheTempleofAhnQiraj = "Temple of Ahn'Qiraj",
     TheRuinsofAhnQiraj = "Ruins of Ahn'Qiraj",
-    NightmareGrove = "Nightmare Grove",
+    --NightmareGrove = "Nightmare Grove",  -- Doesn't exist in AtlasLoot data structure
     BlackwingLair = "Blackwing Lair",
     ["Zul'Gurub"] = "Zul'Gurub",
-    MoltenCore2 = "Molten Core",
-    Onyxia2 = "Onyxia",
-    WorldBosses2 = "World Bosses",
+    MoltenCore = "Molten Core",           -- Fixed: was "MoltenCore2"
+    Onyxia = "Onyxia",                    -- Fixed: was "Onyxia2"
+    WorldBosses = "World Bosses",         -- Fixed: was "WorldBosses2"
 }
 
 local blacklist = {
@@ -33,7 +33,7 @@ local function FormatRaidNames(raidName)
 end
 
 local function ImportItemIds()
-    if DEBUG then print(DEBUG_MSG, "[ImportItemIds] Importing items from Atlasloot...") end
+    print(MSG, "[ImportItemIds] Importing items from Atlasloot...")
 
     local atlasRaidsTable = AtlasLoot.ItemDB.Storage.AtlasLootClassic_DungeonsAndRaids
 
@@ -62,7 +62,7 @@ local function ImportItemIds()
                     end
                 end
             end
-            if DEBUG then print(DEBUG_MSG, "[ImportItemIds]", raidName) end
+            print(MSG, "[ImportItemIds]", raidName)
         end
     end
 end
@@ -71,12 +71,12 @@ local attemptCount = 0
 
 function GargulAutoRoll.AtlasLoot.Import()
     if IsAtlasLootDataReady() then
-        if DEBUG then print(DEBUG_MSG, "[Import] AtlasLoot detected") end
+        print(MSG, "[Import] AtlasLoot detected")
         ImportItemIds()
     else
         attemptCount = attemptCount + 1
         if attemptCount >= 5 then
-            if DEBUG then print(DEBUG_MSG, "[Import] AtlasLoot not detected") end
+            print(MSG, "[Import] AtlasLoot not detected")
         else
             C_Timer.After(1, GargulAutoRoll.AtlasLoot.Import)
         end

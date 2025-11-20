@@ -86,6 +86,65 @@ SlashCmdList["AR"] = function(msg)
         return
     end
 
+    if cmd == "test" then
+        -- Test AtlasLoot integration
+        print(MSG, "=== AtlasLoot Integration Test ===")
+        
+        -- Check if AtlasLoot is loaded
+        if AtlasLoot then
+            print(MSG, "✓ AtlasLoot addon is loaded")
+        else
+            print(MSG, "✗ AtlasLoot addon NOT found")
+            return
+        end
+        
+        -- Check if data storage exists
+        if AtlasLoot.ItemDB and AtlasLoot.ItemDB.Storage and AtlasLoot.ItemDB.Storage.AtlasLootClassic_DungeonsAndRaids then
+            print(MSG, "✓ AtlasLoot data storage is ready")
+        else
+            print(MSG, "✗ AtlasLoot data storage NOT ready")
+            return
+        end
+        
+        -- Check if GargulAutoRoll has imported items
+        local hasItems = false
+        local raidCount = 0
+        local bossCount = 0
+        local itemCount = 0
+        
+        for raidName, raidData in pairs(GargulAutoRoll.Items.Classic) do
+            raidCount = raidCount + 1
+            for bossName, items in pairs(raidData) do
+                bossCount = bossCount + 1
+                for _, itemId in pairs(items) do
+                    itemCount = itemCount + 1
+                    hasItems = true
+                end
+            end
+        end
+        
+        if hasItems then
+            print(MSG, "✓ Items imported successfully")
+            print(MSG, "  Raids: " .. raidCount)
+            print(MSG, "  Bosses: " .. bossCount)
+            print(MSG, "  Items: " .. itemCount)
+        else
+            print(MSG, "✗ No items found in GargulAutoRoll.Items.Classic")
+        end
+        
+        -- Sample a specific raid
+        if GargulAutoRoll.Items.Classic["Blackwing Lair"] then
+            local bwlBosses = 0
+            for _ in pairs(GargulAutoRoll.Items.Classic["Blackwing Lair"]) do
+                bwlBosses = bwlBosses + 1
+            end
+            print(MSG, "  Example: Blackwing Lair has " .. bwlBosses .. " bosses")
+        end
+        
+        print(MSG, "=== Test Complete ===")
+        return
+    end
+
     if cmd == "help" then
         GargulAutoRoll:PrintHelp()
         return
