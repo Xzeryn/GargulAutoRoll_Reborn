@@ -1,4 +1,9 @@
 v4.0
+- **CRITICAL FIX:** Renamed internal `Utils` to `GargulAutoRoll_Utils` to prevent naming collisions with other addons
+  - Fixes error: "attempt to call method 'CountRules' (a nil value)" on some characters
+  - Prevents conflicts when other addons use the same generic "Utils" global variable name
+  - All internal references updated to use proper namespacing
+  - No functionality changes, only improved compatibility
 - Updated addon interface version to 11508 (WoW Classic 1.15.8 Anniversary)
 - Added comprehensive Classic Anniversary item database (Naxxramas, AQ40, AQ20, BWL, ZG, MC, Onyxia, World Bosses)
 - Maintained separate SoD item database for Season of Discovery players
@@ -12,9 +17,9 @@ v4.0
   - Displays count of new items added vs existing items
   - Provides summary of total raids and items processed
   - Improved import logic to properly merge AtlasLoot data with manual item lists without duplicates
-  - **NEW:** Added 1-second delay to automatic rolls for a more natural appearance
-  - Fixed raid sorting to include Naxxramas in the priority order
-  - Added `/gar testraid` command to simulate being in specific raids for testing sorting
+- **NEW:** Added 1-second delay to automatic rolls for a more natural appearance
+- Fixed raid sorting to include Naxxramas in the priority order
+- Added `/gar testraid` command to simulate being in specific raids for testing sorting
 
 v3.8
 - Added more AQ Items to the local database
