@@ -5,15 +5,15 @@ local function IsAtlasLootDataReady()
 end
 
 local raidNameMappings = {
-    Naxxramas = "Naxxramas",              -- Now enabled for consistency
+    Naxxramas = "Naxxramas",
     TheTempleofAhnQiraj = "Temple of Ahn'Qiraj",
     TheRuinsofAhnQiraj = "Ruins of Ahn'Qiraj",
     --NightmareGrove = "Nightmare Grove",  -- Doesn't exist in AtlasLoot data structure
     BlackwingLair = "Blackwing Lair",
     ["Zul'Gurub"] = "Zul'Gurub",
-    MoltenCore = "Molten Core",           -- Fixed: was "MoltenCore2"
-    Onyxia = "Onyxia",                    -- Fixed: was "Onyxia2"
-    WorldBosses = "World Bosses",         -- Fixed: was "WorldBosses2"
+    MoltenCore = "Molten Core",
+    Onyxia = "Onyxia",
+    WorldBosses = "World Bosses",
 }
 
 local blacklist = {
