@@ -4,9 +4,14 @@ v4.0
 - Maintained separate SoD item database for Season of Discovery players
 - Fixed item search functionality - now shows results for both Classic Anniversary and SoD
 - Fixed item sorting by zone/raid with proper grouping
-- **NEW:** Current raid appears at the top - items from the raid you're in are automatically prioritized
 - Automatic version detection (Classic Anniversary vs Season of Discovery)
-- Completed Naxxramas loot tables including The Hungering Cold and all trash drops
+- **NEW:** Added `/gar test` command to verify AtlasLoot integration in-game
+- Fixed AtlasLoot integration to properly detect loot tables using dynamic difficulty constants
+- Enhanced AtlasLoot import messages with detailed item counts per raid:
+  - Shows total items imported per raid
+  - Displays count of new items added vs existing items
+  - Provides summary of total raids and items processed
+- Improved import logic to properly merge AtlasLoot data with manual item lists without duplicates
 
 v3.8
 - Added more AQ Items to the local database
