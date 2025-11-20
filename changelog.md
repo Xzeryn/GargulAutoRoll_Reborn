@@ -1,3 +1,11 @@
+v4.0
+- Updated addon interface version to 11508 (WoW Classic 1.15.8 Anniversary)
+- Added comprehensive Classic Anniversary item database (Naxxramas, AQ40, AQ20, BWL, ZG, MC, Onyxia, World Bosses)
+- Maintained separate SoD item database for Season of Discovery players
+- Fixed item search functionality - now shows results for both Classic Anniversary and SoD
+- Fixed item sorting by zone/raid with proper grouping
+- Automatic version detection (Classic Anniversary vs Season of Discovery)
+
 v3.8
 - Added more AQ Items to the local database
 
