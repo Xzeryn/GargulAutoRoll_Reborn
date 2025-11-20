@@ -1,3 +1,6 @@
+-- Reference to our Utils (avoid conflicts with other addons)
+local Utils = GargulAutoRoll_Utils
+
 SLASH_AR1 = '/gar';
 SLASH_AR2 = '/gargulautoroll';
 

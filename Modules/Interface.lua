@@ -1,5 +1,8 @@
 GargulAutoRoll.Interface = {}
 
+-- Reference to our Utils (avoid conflicts with other addons)
+local Utils = GargulAutoRoll_Utils
+
 local function CleanupFrame(frame)
     if frame then
         frame:Hide() -- Hide the frame
@@ -929,10 +932,36 @@ function GargulAutoRoll.Interface:RefreshWithItems(searchResults)
 
         searchResults = {}
 
+        -- Defensive check for Utils and CountRules with diagnostics
+        if not Utils then
+            print(MSG, "Error: Utils table is nil. Please reload the UI (/reload)")
+            return
+        end
+        
+        -- Fallback implementation if CountRules is missing
+        local function CountRules(rules)
+            if not rules then return 0 end
+            local count = 0
+            for _ in pairs(rules) do
+                count = count + 1
+            end
+            return count
+        end
+        
+        if not Utils.CountRules then
+            print(MSG, "Warning: Utils.CountRules is missing, using fallback implementation")
+            print(MSG, "Utils table contents:")
+            for k, v in pairs(Utils) do
+                print("  ", k, type(v))
+            end
+            -- Use fallback
+            Utils.CountRules = CountRules
+        end
+
         local pendingAsync = Utils:CountRules(GargulAutoRollDB.rules)
 
         if pendingAsync > 0 then
-            if DEBUG then print(DEBUG_MSG, "[RefreshWithItems] Processing", Utils:CountRules(GargulAutoRollDB.rules), "rules") end
+            if DEBUG then print(DEBUG_MSG, "[RefreshWithItems] Processing", pendingAsync, "rules") end
             for itemId, _ in pairs(GargulAutoRollDB.rules) do
                 Utils:GetItemInfoAsync(itemId, function(itemName, itemLink, itemRarity, itemIcon)
                     requests = requests + 1

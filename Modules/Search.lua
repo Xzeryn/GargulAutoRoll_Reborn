@@ -1,5 +1,8 @@
 GargulAutoRoll.Search = {}
 
+-- Reference to our Utils (avoid conflicts with other addons)
+local Utils = GargulAutoRoll_Utils
+
 local lastSearchTime = 0
 local throttleTimer = nil
 

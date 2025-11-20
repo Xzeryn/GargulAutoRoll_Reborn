@@ -3,6 +3,9 @@ DEBUG = false  -- Debug mode disabled
 DEBUG_MSG = "|c00967FD2[DEBUG]|r"
 MSG = "|c00967FD2[GargulAutoRoll]|r"
 
+-- Reference to our Utils (avoid conflicts with other addons)
+local Utils = GargulAutoRoll_Utils
+
 if DEBUG then
     REQUESTED = 0
     REFRESHED = 0
@@ -93,6 +96,12 @@ do
 
     local function HandleAutoroll(message, sender)
         if GargulAutoRollDB.enabled == true then
+            -- Verify Utils is available
+            if not Utils or not Utils.ROLL then
+                print(MSG, "Error: Utils not properly loaded. Cannot auto-roll.")
+                return
+            end
+            
             local itemLink, itemId = message:match("roll on (|c.-|Hitem:(%d+).-|h|r)")
 
             if itemId then
@@ -209,6 +218,12 @@ do
     end)
 
     function GargulAutoRoll:SaveRule(itemLink, rule)
+        -- Verify Utils is available
+        if not Utils then
+            print(MSG, "Error: Utils not properly loaded. Cannot save rule.")
+            return
+        end
+        
         local itemId = Utils:GetItemIdFromLink(itemLink)
 
         if itemId then
@@ -237,6 +252,12 @@ do
     end
 
     function GargulAutoRoll:SaveRuleAsync(itemLink, rule)
+        -- Verify Utils is available
+        if not Utils then
+            print(MSG, "Error: Utils not properly loaded. Cannot save rule.")
+            return
+        end
+        
         local itemId = Utils:GetItemIdFromLink(itemLink)
 
         Utils:GetItemInfoAsync(itemId, function(itemName, itemLink, itemRarity, itemIcon)
