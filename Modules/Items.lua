@@ -7,215 +7,220 @@ GargulAutoRoll.Items.Classic = {
     ["Naxxramas"] = {
         ["Anub'Rekhan"] = {
             22726, -- Splinter of Atiesh
+            22727, -- Frame of Atiesh
             22369, -- Desecrated Bindings
             22362, -- Desecrated Wristguards
             22355, -- Desecrated Bracers
-            23220, -- Crystal Webbed Robe
-            23219, -- Girdle of the Mentor
-            23221, -- Misplaced Servo Arm
-            23218, -- Grave Digger
-            23237, -- Ring of the Cryptstalker
-            23217, -- Maladath, Runed Blade of the Black Flight
+            22935, -- Touch of Frost
+            22938, -- Cryptfiend Silk Cloak
+            22936, -- Wristguards of Vengeance
+            22939, -- Band of Unanswered Prayers
+            22937, -- Gem of Nerubis
         },
         ["Grand Widow Faerlina"] = {
             22726, -- Splinter of Atiesh
+            22727, -- Frame of Atiesh
             22369, -- Desecrated Bindings
             22362, -- Desecrated Wristguards
             22355, -- Desecrated Bracers
-            23226, -- Ghoul Skin Tunic
-            23238, -- Stygian Buckler
-            23225, -- Soulstring
-            23221, -- Misplaced Servo Arm
-            23220, -- Crystal Webbed Robe
+            22943, -- Malice Stone Pendant
+            22941, -- Polar Shoulder Pads
+            22940, -- Icebane Pauldrons
+            22942, -- The Widow's Embrace
+            22806, -- Widow's Remorse
         },
         ["Maexxna"] = {
             22726, -- Splinter of Atiesh
+            22727, -- Frame of Atiesh
             22371, -- Desecrated Gloves
             22364, -- Desecrated Handguards
             22357, -- Desecrated Gauntlets
+            22947, -- Pendant of Forgotten Names
             23220, -- Crystal Webbed Robe
-            23219, -- Girdle of the Mentor
-            23221, -- Misplaced Servo Arm
-            23237, -- Ring of the Cryptstalker
+            22954, -- Kiss of the Spider
+            22807, -- Wraith Blade
+            22804, -- Maexxna's Fang
         },
         ["Noth the Plaguebringer"] = {
             22726, -- Splinter of Atiesh
+            22727, -- Frame of Atiesh
             22370, -- Desecrated Belt
             22363, -- Desecrated Girdle
             22356, -- Desecrated Waistguard
             23030, -- Cloak of the Scourge
-            23029, -- Noth's Frigid Heart
+            23031, -- Band of the Inevitable
             23028, -- Hailstone Band
-            23027, -- Plague Bearer
+            23029, -- Noth's Frigid Heart
             23006, -- Libram of Light
             23005, -- Totem of Flowing Water
+            22816, -- Hatchet of Sundered Bone
         },
         ["Heigan the Unclean"] = {
             22726, -- Splinter of Atiesh
+            22727, -- Frame of Atiesh
             22370, -- Desecrated Belt
             22363, -- Desecrated Girdle
             22356, -- Desecrated Waistguard
-            23033, -- Icy Scale Spaulders
-            23036, -- Necklace of Necropsy
             23035, -- Preceptor's Hat
+            23033, -- Icy Scale Coif
+            23019, -- Icebane Helmet
+            23036, -- Necklace of Necropsy
+            23068, -- Legplates of Carnage
         },
         ["Loatheb"] = {
             22726, -- Splinter of Atiesh
+            22727, -- Frame of Atiesh
             22366, -- Desecrated Leggings
             22359, -- Desecrated Legguards
             22352, -- Desecrated Legplates
-            23039, -- The Eye of Nerub
             23038, -- Band of Unnatural Forces
-            23037, -- Ring of the Eternal Flame
+            23037, -- Ring of Spiritual Fervor
             23042, -- Loatheb's Reflection
-            23041, -- Slayer's Crest
-            23043, -- The Face of Death
+            23039, -- The Eye of Nerub
+            22800, -- Brimstone Staff
         },
         ["Instructor Razuvious"] = {
             22726, -- Splinter of Atiesh
-            22372, -- Desecrated Shoulderpads
-            22365, -- Desecrated Spaulders
-            22358, -- Desecrated Pauldrons
+            22727, -- Frame of Atiesh
+            22372, -- Desecrated Sandals
+            22365, -- Desecrated Boots
+            22358, -- Desecrated Sabatons
             23017, -- Veil of Eclipse
-            23018, -- Signet of the Fallen Defender
             23219, -- Girdle of the Mentor
-            23221, -- Misplaced Servo Arm
+            23018, -- Signet of the Fallen Defender
             23004, -- Idol of Longevity
+            23009, -- Wand of the Whispering Dead
+            23014, -- Iblis, Blade of the Fallen Seraph
         },
         ["Gothik the Harvester"] = {
             22726, -- Splinter of Atiesh
-            22372, -- Desecrated Shoulderpads
-            22365, -- Desecrated Spaulders
-            22358, -- Desecrated Pauldrons
+            22727, -- Frame of Atiesh
+            22372, -- Desecrated Sandals
+            22365, -- Desecrated Boots
+            22358, -- Desecrated Sabatons
             23032, -- Glacial Headdress
-            23020, -- Seal of the Damned
-            23019, -- Icebane Helmet
+            23020, -- Polar Helmet
+            23023, -- Sadist's Collar
             23021, -- The Soul Harvester's Bindings
+            23073, -- Boots of Displacement
         },
         ["The Four Horsemen"] = {
             22726, -- Splinter of Atiesh
+            22727, -- Frame of Atiesh
             22351, -- Desecrated Robe
-            22360, -- Desecrated Tunic
-            22367, -- Desecrated Breastplate
-            22691, -- Corrupted Ashbringer
-            22691, -- Corrupted Ashbringer
+            22350, -- Desecrated Tunic
+            22349, -- Desecrated Breastplate
             23071, -- Leggings of Apocalypse
-            23073, -- Boots of Displacement
+            23025, -- Seal of the Damned
+            23027, -- Warmth of Forgiveness
+            22811, -- Soulstring
+            22809, -- Maul of the Redeemed Crusader
+            22691, -- Corrupted Ashbringer
         },
         ["Patchwerk"] = {
             22726, -- Splinter of Atiesh
-            22368, -- Desecrated Boots
-            22361, -- Desecrated Sandals
-            22354, -- Desecrated Sabatons
+            22727, -- Frame of Atiesh
+            22368, -- Desecrated Shoulderpads
+            22361, -- Desecrated Spaulders
+            22354, -- Desecrated Pauldrons
             22960, -- Cloak of Suturing
             22961, -- Band of Reanimation
+            22820, -- Wand of Fates
+            22818, -- The Plague Bearer
             22815, -- Severance
         },
         ["Grobbulus"] = {
             22726, -- Splinter of Atiesh
-            22368, -- Desecrated Boots
-            22361, -- Desecrated Sandals
-            22354, -- Desecrated Sabatons
+            22727, -- Frame of Atiesh
+            22368, -- Desecrated Shoulderpads
+            22361, -- Desecrated Spaulders
+            22354, -- Desecrated Pauldrons
             22968, -- Glacial Mantle
-            22967, -- Icy Scale Gauntlets
+            22967, -- Icy Scale Spaulders
             22810, -- Toxin Injector
+            22803, -- Midnight Haze
+            22988, -- The End of Dreams
         },
         ["Gluth"] = {
             22726, -- Splinter of Atiesh
+            22727, -- Frame of Atiesh
             22983, -- Rime Covered Mantle
             22981, -- Gluth's Missing Collar
             22994, -- Digested Hand of Power
+            23075, -- Death's Bargain
+            22813, -- Claymore of Unholy Might
         },
         ["Thaddius"] = {
             22726, -- Splinter of Atiesh
-            22367, -- Desecrated Breastplate
-            22360, -- Desecrated Tunic
-            22351, -- Desecrated Robe
+            22727, -- Frame of Atiesh
+            22367, -- Desecrated Circlet
+            22360, -- Desecrated Headpiece
+            22353, -- Desecrated Helmet
             23000, -- Plated Abomination Ribcage
             23070, -- Leggings of Polarity
+            23001, -- Eye of Diminution
             22808, -- The Castigator
+            22801, -- Spire of Twilight
         },
         ["Sapphiron"] = {
-            23549, -- Splinter of Atiesh
             23050, -- Cloak of the Necropolis
             23045, -- Shroud of Dominion
-            23242, -- Claw of the Frost Wyrm
             23040, -- Glyph of Deflection
             23047, -- Eye of the Dead
+            23041, -- Slayer's Crest
             23046, -- The Restrained Essence of Sapphiron
-            23048, -- Sapphiron's Right Eye
             23049, -- Sapphiron's Left Eye
+            23048, -- Sapphiron's Right Eye
+            23043, -- The Face of Death
+            23242, -- Claw of the Frost Wyrm
+            23549, -- Fortitude of the Scourge
+            23548, -- Might of the Scourge
+            23545, -- Power of the Scourge
+            23547, -- Resilience of the Scourge
         },
         ["Kel'Thuzad"] = {
-            22520, -- The Phylactery of Kel'Thuzad
-            22733, -- Staff of the Grand Crusader
-            22798, -- Might of Menethil
-            22799, -- Soulseeker
-            22802, -- Kingsfall
+            23057, -- Gem of Trapped Innocents
+            23053, -- Stormrage's Talisman of Seething
             22812, -- Nerubian Slavemaker
             22821, -- Doomfinger
+            22819, -- Shield of Condemnation
+            22802, -- Kingsfall
             23056, -- Hammer of the Twisting Nether
-            23577, -- The Hungering Cold
-            22806, -- Widow's Remorse
-            23053, -- Stormrage's Talisman of Seething
             23054, -- Gressil, Dawn of Ruin
-            23056, -- Hammer of the Twisting Nether
-            23057, -- Gem of Trapped Innocents
-            23059, -- Ring of the Dreadnaught
-            23060, -- Bonescythe Ring
+            23577, -- The Hungering Cold
+            22798, -- Might of Menethil
+            22799, -- Soulseeker
+            22520, -- The Phylactery of Kel'Thuzad
             23061, -- Ring of Faith
             23062, -- Frostfire Ring
             23063, -- Plagueheart Ring
-            23064, -- Ring of The Dreamwalker
-            23065, -- Ring of the Cryptstalker
+            23060, -- Bonescythe Ring
+            23064, -- Ring of the Dreamwalker
+            23067, -- Ring of the Cryptstalker
+            23065, -- Ring of the Earthshatterer
             23066, -- Ring of Redemption
-            23067, -- Ring of the Earthshatterer
-            22519, -- Frostfire Circlet
-            22507, -- Circlet of Restless Dreams
-            22503, -- Dreadnaught Helmet
-            22478, -- Bonescythe Helmet
-            22513, -- Robe of Faith
-            22504, -- Desecrated Plate
-            22512, -- Desecrated Robe
+            23059, -- Ring of the Dreadnaught
+            22733, -- Staff Head of Atiesh
         },
         ["Trash"] = {
+            23664, -- Pauldrons of Elemental Fury
+            23667, -- Spaulders of the Grand Crusader
+            23069, -- Necro-Knight's Garb
+            23226, -- Ghoul Skin Tunic
+            23663, -- Girdle of Elemental Fury
+            23666, -- Belt of the Grand Crusader
+            23665, -- Leggings of Elemental Fury
+            23668, -- Leggings of the Grand Crusader
+            23237, -- Ring of the Eternal Flame
+            23238, -- Stygian Buckler
+            23044, -- Harbinger of Doom
+            23221, -- Misplaced Servo Arm
             22376, -- Wartorn Cloth Scrap
             22373, -- Wartorn Leather Scrap
             22374, -- Wartorn Chain Scrap
             22375, -- Wartorn Plate Scrap
-            22326, -- Amalgam's Band
-            22331, -- Band of the Inevitable
-            22332, -- Blade of the Fallen Seraph
-            22333, -- Hammer of the Penitent
-            22334, -- Band of Reanimation
-            22335, -- Lord Blackwood's Blade
-            22336, -- Desecrated Sandals
-            22337, -- Shroud of Dominion
-            22338, -- Desecrated Bindings
-            22339, -- Rune of the Dawn
-            22340, -- Gargoyle Shredder Talons
-            22342, -- Handgrips of Potent Afflictions
-            22343, -- Malice Stone Pendant
-            22348, -- Doomulus Prime
-            22349, -- Polar Shoulder Pads
-            22350, -- Polar Tunic
-            22366, -- Desecrated Leggings
-            22372, -- Desecrated Shoulderpads
-            22401, -- Libram of Hope
-            22402, -- Libram of Grace
-            22403, -- Libram of Truth
-            22404, -- Totem of Sustaining
-            22405, -- Totem of Rage
-            22406, -- Totem of Life
-            22407, -- Idol of Rejuvenation
-            22408, -- Idol of Health
-            22409, -- Idol of Strife
-            23664, -- Pauldrons of Elemental Fury
-            23665, -- Leggings of Polarity
-            23666, -- Belt of the Grand Crusader
-            23667, -- Spaulders of the Grand Crusader
-            23668, -- Leggings of the Grand Crusader
-            23669, -- Necro-Knight's Garb
+            23055, -- Word of Thawing
+            22682, -- Frozen Rune
         },
     },
 ---------------------------------------------------------------------------------------------------------------
@@ -409,115 +414,188 @@ GargulAutoRoll.Items.Classic = {
 ---------------------------------------------------------------------------------------------------------------
     ["Blackwing Lair"] = {
         ["Razorgore the Untamed"] = {
-            19370, -- Mantle of the Blackwing Cabal
-            19369, -- Gloves of Rapid Evolution
-            19334, -- The Untamed Blade
-            19335, -- Spineshatter
             16926, -- Bindings of Transcendence
             16918, -- Netherwind Bindings
+            16934, -- Nemesis Bracers
             16911, -- Bloodfang Bracers
-            16959, -- Bracers of Ten Storms
             16904, -- Stormrage Bracers
-            16943, -- Bracers of Wrath
             16935, -- Dragonstalker's Bracers
+            16943, -- Bracers of Ten Storms
             16951, -- Judgement Bindings
+            16959, -- Bracelets of Wrath
+            19336, -- Arcane Infused Gem
+            19337, -- The Black Book
+            19370, -- Mantle of the Blackwing Cabal
+            19369, -- Gloves of Rapid Evolution
+            19335, -- Spineshatter
+            19334, -- The Untamed Blade
         },
         ["Vaelastrasz the Corrupt"] = {
-            19346, -- Dragonfang Blade
-            19348, -- Red Dragonscale Protector
-            19371, -- Pendant of the Fallen Dragon
+            16925, -- Belt of Transcendence
+            16818, -- Netherwind Belt
+            16933, -- Nemesis Belt
+            16910, -- Bloodfang Belt
+            16903, -- Stormrage Belt
+            16936, -- Dragonstalker's Belt
+            16944, -- Belt of Ten Storms
+            16952, -- Judgement Belt
+            16960, -- Waistband of Wrath
+            19339, -- Mind Quickening Gem
+            19340, -- Rune of Metamorphosis
             19372, -- Helm of Endless Rage
-            19373, -- Black Brood Pauldrons
-            16818, -- Netherwind Belt
-            16806, -- Bloodfang Belt
-            16827, -- Nightslayer Belt
-            16936, -- Nemesis Belt
-            16910, -- Bloodfang Bracers
-            16818, -- Netherwind Belt
-            16936, -- Nemesis Belt
-            16806, -- Bloodfang Belt
+            19371, -- Pendant of the Fallen Dragon
+            19348, -- Red Dragonscale Protector
+            19346, -- Dragonfang Blade
         },
         ["Broodlord Lashlayer"] = {
-            20383, -- Head of the Broodlord Lashlayer
+            16919, -- Boots of Transcendence
+            16912, -- Netherwind Boots
+            16927, -- Nemesis Boots
+            16906, -- Bloodfang Boots
+            16898, -- Stormrage Boots
+            16941, -- Dragonstalker's Greaves
+            16949, -- Greaves of Ten Storms
+            16957, -- Judgement Sabatons
+            16965, -- Sabatons of Wrath
+            19341, -- Lifegiving Gem
+            19342, -- Venomous Totem
+            19373, -- Black Brood Pauldrons
+            19374, -- Bracers of Arcane Accuracy
             19350, -- Heartstriker
             19351, -- Maladath, Runed Blade of the Black Flight
-            19374, -- Black Brood Pauldrons
-            19375, -- Mish'undare, Circlet of the Mind Flayer
-            16906, -- Bloodfang Boots
-            16919, -- Netherwind Boots
-            16927, -- Nemesis Boots
-            16898, -- Tier 2 Boots
+            20383, -- Head of the Broodlord Lashlayer
         },
         ["Firemaw"] = {
-            19355, -- Shadow Wing Focus Staff
-            19353, -- Drake Talon Pauldrons
+            16920, -- Handguards of Transcendence
+            16913, -- Netherwind Gloves
+            16928, -- Nemesis Gloves
+            16907, -- Bloodfang Gloves
+            16899, -- Stormrage Handguards
+            16940, -- Dragonstalker's Gauntlets
+            16948, -- Gauntlets of Ten Storms
+            16956, -- Judgement Gauntlets
+            16964, -- Gauntlets of Wrath
+            19344, -- Natural Alignment Crystal
+            19343, -- Scrolls of Blinding Light
+            19394, -- Drake Talon Pauldrons
             19398, -- Cloak of Firemaw
-            19400, -- Firemaw's Clutch
             19399, -- Black Ash Robe
-            19394, -- Drake Talon Cleaver
+            19400, -- Firemaw's Clutch
+            19396, -- Taut Dragonhide Belt
             19401, -- Primalist's Linked Legguards
             19402, -- Legguards of the Fallen Crusader
+            19365, -- Claw of the Black Drake
+            19353, -- Drake Talon Cleaver
+            19355, -- Shadow Wing Focus Staff
             19397, -- Ring of Blackrock
+            19395, -- Rejuvenating Gem
         },
         ["Ebonroc"] = {
+            16920, -- Handguards of Transcendence
+            16913, -- Netherwind Gloves
+            16928, -- Nemesis Gloves
+            16907, -- Bloodfang Gloves
+            16899, -- Stormrage Handguards
+            16940, -- Dragonstalker's Gauntlets
+            16948, -- Gauntlets of Ten Storms
+            16956, -- Judgement Gauntlets
+            16964, -- Gauntlets of Wrath
+            19345, -- Aegis of Preservation
+            19406, -- Drake Fang Talisman
+            19395, -- Rejuvenating Gem
+            19394, -- Drake Talon Pauldrons
             19407, -- Ebony Flame Gloves
-            19355, -- Shadow Wing Focus Staff
-            19353, -- Drake Talon Pauldrons
-            19394, -- Drake Talon Cleaver
+            19396, -- Taut Dragonhide Belt
+            19405, -- Malfurion's Blessed Bulwark
             19368, -- Dragonbreath Hand Cannon
-            19369, -- Gloves of Rapid Evolution
-            16913, -- Netherwind Crown
-            16921, -- Halo of Transcendence
-            16900, -- Stormrage Cover
-            16939, -- Dragonstalker's Helm
-            16947, -- Helmet of Ten Storms
-            16955, -- Judgment Crown
-            16963, -- Helm of Wrath
+            19353, -- Drake Talon Cleaver
+            19355, -- Shadow Wing Focus Staff
+            19403, -- Band of Forced Concentration
+            19397, -- Ring of Blackrock
         },
         ["Flamegor"] = {
-            19355, -- Shadow Wing Focus Staff
-            19353, -- Drake Talon Pauldrons
-            19394, -- Drake Talon Cleaver
-            19397, -- Ring of Blackrock
-            19430, -- Shroud of Pure Thought
+            16920, -- Handguards of Transcendence
+            16913, -- Netherwind Gloves
+            16928, -- Nemesis Gloves
+            16907, -- Bloodfang Gloves
+            16899, -- Stormrage Handguards
+            16940, -- Dragonstalker's Gauntlets
+            16948, -- Gauntlets of Ten Storms
+            16956, -- Judgement Gauntlets
+            16964, -- Gauntlets of Wrath
+            19395, -- Rejuvenating Gem
             19431, -- Styleen's Impeding Scarab
-            19432, -- Circle of Applied Force
+            19394, -- Drake Talon Pauldrons
+            19430, -- Shroud of Pure Thought
+            19396, -- Taut Dragonhide Belt
             19433, -- Emberweave Leggings
+            19367, -- Dragon's Touch
+            19353, -- Drake Talon Cleaver
+            19357, -- Herald of Woe
+            19355, -- Shadow Wing Focus Staff
+            19432, -- Circle of Applied Force
+            19397, -- Ring of Blackrock
         },
         ["Chromaggus"] = {
-            19361, -- Ashjre'thul, Crossbow of Smiting
-            19352, -- Chromatically Tempered Sword
-            19349, -- Elementium Reinforced Bulwark
-            19394, -- Drake Talon Cleaver
-            19388, -- Angelista's Grasp
-            19389, -- Taut Dragonhide Shoulderpads
-            19385, -- Empowered Leggings
-            19387, -- Chromatic Boots
-            16917, -- Netherwind Mantle
-            16832, -- Bloodfang Spaulders
-            16945, -- Legplates of Ten Storms
-            16937, -- Nemesis Spaulders
-            16902, -- Stormrage Pauldrons
-            16909, -- Bloodfang Spaulders
             16924, -- Pauldrons of Transcendence
-            16953, -- Judgment Spaulders
+            16917, -- Netherwind Mantle
+            16932, -- Nemesis Spaulders
+            16832, -- Bloodfang Spaulders
+            16902, -- Stormrage Pauldrons
+            16937, -- Dragonstalker's Spaulders
+            16945, -- Epaulets of Ten Storms
+            16953, -- Judgement Spaulders
             16961, -- Pauldrons of Wrath
+            19389, -- Taut Dragonhide Shoulderpads
+            19386, -- Elementium Threaded Cloak
+            19390, -- Taut Dragonhide Gloves
+            19388, -- Angelista's Grasp
+            19393, -- Primalist's Linked Waistguard
+            19392, -- Girdle of the Fallen Crusader
+            19385, -- Empowered Leggings
+            19391, -- Shimmering Geta
+            19387, -- Chromatic Boots
+            19361, -- Ashjre'thul, Crossbow of Smiting
+            19349, -- Elementium Reinforced Bulwark
+            19347, -- Claw of Chromaggus
+            19352, -- Chromatically Tempered Sword
         },
         ["Nefarian"] = {
-            19003, -- Head of Nefarian
-            19002, -- Head of Nefarian
+            16923, -- Robes of Transcendence
+            16916, -- Netherwind Robes
+            16931, -- Nemesis Robes
+            16905, -- Bloodfang Chestpiece
+            16897, -- Stormrage Chestguard
+            16942, -- Dragonstalker's Breastplate
+            16950, -- Breastplate of Ten Storms
+            16958, -- Judgement Breastplate
+            16966, -- Breastplate of Wrath
+            19002, -- Head of Nefarian (Horde)
+            19003, -- Head of Nefarian (Alliance)
+            19360, -- Lok'amir il Romathis
+            19363, -- Crul'shorukh, Edge of Chaos
+            19364, -- Ashkandi, Greatsword of the Brotherhood
+            19356, -- Staff of the Shadow Flame
             19375, -- Mish'undare, Circlet of the Mind Flayer
-            19376, -- Archimtiros' Ring of Reckoning
             19377, -- Prestor's Talisman of Connivery
             19378, -- Cloak of the Brood Lord
-            19379, -- Neltharion's Tear
             19380, -- Therazane's Link
             19381, -- Boots of the Shadow Flame
+            19376, -- Archimtiros' Ring of Reckoning
             19382, -- Pure Elementium Band
-            19003, -- Head of Nefarian
-            21138, -- Thick Obsidian Breastplate
+            19379, -- Neltharion's Tear
+            11938, -- Sack of Gems
         },
         ["Trash"] = {
+            19436, -- Cloak of Draconic Might
+            19439, -- Interlaced Shadow Jerkin
+            19437, -- Boots of Pure Thought
+            19438, -- Ringo's Blizzard Boots
+            19434, -- Band of Dark Dominion
+            19435, -- Essence Gatherer
+            19362, -- Doom's Edge
+            19354, -- Draconic Avenger
+            19358, -- Draconic Maul
             18562, -- Elementium Ore
         },
     },

@@ -4,7 +4,9 @@ v4.0
 - Maintained separate SoD item database for Season of Discovery players
 - Fixed item search functionality - now shows results for both Classic Anniversary and SoD
 - Fixed item sorting by zone/raid with proper grouping
+- **NEW:** Current raid appears at the top - items from the raid you're in are automatically prioritized
 - Automatic version detection (Classic Anniversary vs Season of Discovery)
+- Completed Naxxramas loot tables including The Hungering Cold and all trash drops
 
 v3.8
 - Added more AQ Items to the local database

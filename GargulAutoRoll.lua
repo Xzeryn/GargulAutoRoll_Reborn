@@ -1,5 +1,5 @@
 ADDON_VERSION = "v4.0"
-DEBUG = false
+DEBUG = false  -- Debug mode disabled
 DEBUG_MSG = "|c00967FD2[DEBUG]|r"
 MSG = "|c00967FD2[GargulAutoRoll]|r"
 
@@ -172,8 +172,17 @@ do
                 if not GargulAutoRoll.IsSoD then GargulAutoRoll.AtlasLoot.Import() end
                 GargulAutoRoll.IsInitialized = true
             end
-            GargulAutoRoll.playerInstance = GetInstanceInfo()
+            local instanceName = GetInstanceInfo()
+            GargulAutoRoll.playerInstance = instanceName
             if DEBUG then print(DEBUG_MSG, "[GetPlayerInstance]", GargulAutoRoll.playerInstance) end
+            -- Temporary debug to help troubleshoot
+            if instanceName and instanceName ~= "" then
+                print(MSG, "Detected instance:", instanceName)
+            end
+            -- Refresh the UI to reorder items if the addon window is open
+            if GargulAutoRoll:IsShown() then
+                GargulAutoRoll.Interface:RefreshEntries()
+            end
             return
         elseif event == "CHAT_MSG_RAID" or event == "CHAT_MSG_RAID_LEADER" or event == "CHAT_MSG_RAID_WARNING" or (DEBUG and event == "CHAT_MSG_SAY") then
             OnRaidMessage(self, event, addon, ...)

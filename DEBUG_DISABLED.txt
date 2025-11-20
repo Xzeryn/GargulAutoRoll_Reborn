@@ -1,0 +1,32 @@
+# Debug Mode Disabled
+
+Debug messages have been disabled in GargulAutoRoll.
+
+## Changes Made
+
+**File:** `GargulAutoRoll.lua`
+- Line 2: Changed `DEBUG = true` to `DEBUG = false`
+
+## To Re-enable Debug Mode
+
+If you need to troubleshoot in the future, change line 2 back to:
+```lua
+DEBUG = true
+```
+
+This will enable all debug print statements throughout the addon.
+
+## What Was Disabled
+
+When DEBUG = false, the following will NOT print to chat:
+- Item awarded/given events
+- Player instance changes
+- Rule save operations
+- Search operations
+- AtlasLoot import messages
+- Interface interactions
+- Item rendering details
+- And all other debug messages throughout the addon
+
+The addon will continue to function normally, just without the debug output.
+

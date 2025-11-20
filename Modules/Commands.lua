@@ -68,7 +68,7 @@ SlashCmdList["AR"] = function(msg)
                         rule = ruleData
                     })
                 else
-                    print(MSG, "Item info not available for ID:", itemId)
+                    --print(MSG, "Item info not available for ID:", itemId)
                 end
 
                 remainingItems = remainingItems - 1

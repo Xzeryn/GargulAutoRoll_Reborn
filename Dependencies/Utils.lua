@@ -82,7 +82,7 @@ function Utils:GetItemInfoAsync(itemId, callback)
     -- Timeout handler
     frame:SetScript("OnUpdate", function()
         if (GetTime() - startTime) > timeout then
-            print(MSG, "The item with ID " .. itemId .. " could not be found.")
+            --print(MSG, "The item with ID " .. itemId .. " could not be found.")
             callback(nil, nil, nil, nil)
             cleanup()
         end
